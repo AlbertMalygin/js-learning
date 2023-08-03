@@ -4,9 +4,86 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/main.css">
+  
   <title>Document</title>
 </head>
 <body>
+  <div class="wrapper">
+
+    <div class="section">
+      <div class="container">
+        <h2>Задача 1: Фильтрация строки</h2>
+        <div class="strings-remaker">
+          <input type="text" class="strings-remaker__input" placeholder="Введите текст">
+          <button class="strings-remaker__btn">Обработать</button>
+          <div class="strings-remaker__result-container">
+            <h3>Результат:</h3>
+            <p class="strings-remaker__result"></p>
+          </div>
+        </div>
+      </div>
+    </div>   
+
+    <div class="line"></div>
+
+    <div class="section">
+      <div class="container">
+        <h2>Задача 2: Выборка объекта</h2>
+        <div class="filter-wrapper">
+          <div class="worker-info">
+            <label class="name">
+              <h3>Имя:</h3>
+              <input type="text" class="name__input">            
+            </label>
+            <label class="salary">
+              <h3>Зарплата: (0-3000)</h3>
+              <input type="text" class="salary__input">
+            </label>
+            <div class="btns">
+              <button class="add-worker__btn">Добавить рабочего</button>
+              <button class="filter__btn">Отобрать с зп от 1000</button>
+            </div>
+          </div>
+
+          <ul class="workers-list"></ul>
+        </div>
+        
+      </div>
+    </div>   
+
+    <div class="line"></div>
+
+    <div class="section">
+      <div class="container">
+        <h2>Задача 3: Анализ строки</h2>
+        <div class="extension-search">
+          <input type="text" class="extension-search__input" placeholder="Введите текст">
+          <button class="extension-search__btn">Обработать</button>
+          <div class="extension-search__result-container">
+            <h3>Результат:</h3>
+            <p class="extension-search__result"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="section">
+      <div class="container">
+        <h2>Задача 4: Фильтрация массива</h2>
+        <div class="even-numbers-filter">
+          <div class="even-numbers-filter__txt"></div>
+          <button class="even-numbers-filter__btn">Обработать</button>
+          <div class="even-numbers-filter__result-container">
+            <h3>Результат:</h3>
+            <p class="even-numbers-filter__result"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="./scripts/main.js"></script>
   
