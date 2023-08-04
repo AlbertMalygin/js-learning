@@ -54,17 +54,36 @@ let filteredArray = [];
 function showWorkers (workers) {  
   workerList.innerHTML = '';
   workers.forEach(worker => {
-    let liName = document.createElement('li');
-    let liSalary = document.createElement('li');
-    let div = document.createElement('div');
+    const workerItem = document.createElement('li');
+    const name = document.createElement('div');
+    name.innerHTML = 'Имя: ' + worker.name;
+    const salary = document.createElement('div');
+    salary.innerHTML = 'Зарплата: ' + worker.salary;
+    const button = document.createElement('button');
+    button.classList.add('delete-btn');
+    button.textContent = 'x';
+    const div = document.createElement('div');
     div.classList.add('line');
-    liName.innerHTML = 'Имя: ' + worker.name;
-    workerList.append(liName);
-    liSalary.innerHTML = 'Зарплата: ' + worker.salary;
-    workerList.append(liSalary);
-    workerList.append(div);
+    
+    workerList.appendChild(workerItem);    
+    workerItem.appendChild(name);
+    workerItem.appendChild(salary);
+    workerItem.appendChild(button);
+    workerItem.appendChild(div);
+
+    button.addEventListener('click', () => {
+      workerList.removeChild(workerItem);
+      let indexItem = workers.forEach((item,index) => {
+        if (item.name == worker.name) {
+          return index;
+        }
+      });
+      workers.splice(indexItem, 1);
+    });    
   });
 }
+
+
 
 function salaryFilter(workers,num) {
   filteredArray = [];
@@ -76,6 +95,7 @@ function salaryFilter(workers,num) {
 }
 
 showWorkers(workers);
+const deleteBtn = document.querySelector('.delete-btn');
 
 addWorkerBtn.addEventListener('click', function() {
   let worker = {};
@@ -92,6 +112,7 @@ addWorkerBtn.addEventListener('click', function() {
 filterBtn.addEventListener('click', function() {
   salaryFilter(workers, 1000);
   showWorkers(filteredArray);
+  console.log(workers);
 });
 
 //--------------------------------------------------------------
